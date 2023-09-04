@@ -14,7 +14,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Items } from "./main/items";
-
+import classes from './page.module.css'
 export default function NamePage() {
   const [data, setData] = useState([]);
   const [sortType, setSortType] = useState("yearDesc");
@@ -87,7 +87,7 @@ export default function NamePage() {
   return (
     <div className="flex w-full">
       <div className="w-1/4">
-        <h2>Категории:</h2>
+        <h2 className={classes['category__title']}>Категории:</h2>
         <ul className="flex flex-col text-base">
           {uniqueCategories.map((category, index) => (
             <li key={index}>

@@ -1,0 +1,8 @@
+.linktext {
+    font-size: 9px;
+    transition: all .3s;
+}
+
+.linktext:hover {
+    color: #909090;
+}

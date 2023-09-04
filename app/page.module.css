@@ -1,0 +1,9 @@
+.category__title {
+    font-size: 16px;
+    font-weight: 700;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    letter-spacing: 0;
+    border-bottom: 2px #e1e1e1 solid;
+    width: 80%;
+}
