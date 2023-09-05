@@ -8,10 +8,10 @@ export default async function page(params) {
   const books = data.filter((item) => item.author_slug === params.params.name);
   console.log(books);
   return (
-    <div className="container flex flex-col w-3/4 mx-auto">
+    <div className="container flex flex-col mx-auto">
       <AuthorCard params={params} />
-      <h2 className="font-bold text-xl mx-auto">Книги автора</h2>
-      <div className="grid grid-cols-4">
+      <h2 className="text-xl mx-auto">КНИГИ АВТОРА</h2>
+      <div className="grid grid-cols-4 pt-16">
        
         {books.map((item) => (
           <BookCard item={item} />
