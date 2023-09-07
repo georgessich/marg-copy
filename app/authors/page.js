@@ -57,8 +57,8 @@ export default function Authors() {
 
   return (
     <div className="container mx-auto">
-      <h1 className="text-8xl">Авторы</h1>
-      <div className="flex items-start">
+      <h1 className="text-7xl">Авторы</h1>
+      <div className="flex items-start pt-10">
         <div className="flex flex-wrap pt-4 w-1/4">
           {alphabet.split("").map((letter) => (
             <button
@@ -80,23 +80,41 @@ export default function Authors() {
           ))}
         </div>
         <div className="w-3/4">
-          {alphabet.split("").map(
-            (letter) =>
-              availableLetters.includes(letter) ? (
-                <div className="bg-zinc-400 p-4 mb-3 rounded-md" key={letter}>
-                  <h2 className="text-2xl">{letter}</h2>
-                  <ul className="grid grid-cols-6 gap-4 pt-2">
-                    {authorGroups[letter]?.map((item) => (
-                      <li className="text-base" key={item}>
-                        <Link href={`/authors/${slugify(item).toLowerCase()}`}>
-                          {item}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ) : null // Используйте null вместо пустой строки, если элемент не нужен
-          )}
+        {alphabet.split("").map((letter) => (
+  availableLetters.includes(letter) ? (
+    // Проверка, выбрана ли буква
+    activeLetter ? (
+      activeLetter === letter && (
+        <div className="bg-zinc-400 p-4 mb-3 rounded-md" key={letter}>
+          <h2 className="text-2xl">{letter}</h2>
+          <ul className="grid grid-cols-6 gap-4 pt-2">
+            {authorGroups[letter]?.map((item) => (
+              <li className="text-base" key={item}>
+                <Link href={`/authors/${slugify(item).toLowerCase()}`}>
+                  {item}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    ) : (
+      // Если буква не выбрана, отображаем всех авторов для этой буквы
+      <div className="bg-zinc-400 p-4 mb-3 rounded-md" key={letter}>
+        <h2 className="text-2xl">{letter}</h2>
+        <ul className="grid grid-cols-6 gap-4 pt-2">
+          {authorGroups[letter]?.map((item) => (
+            <li className="text-base" key={item}>
+              <Link href={`/authors/${slugify(item).toLowerCase()}`}>
+                {item}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  ) : null
+          ))}
         </div>
       </div>
     </div>
