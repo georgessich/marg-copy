@@ -1,0 +1,112 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Уровень над другими элементами на странице */
+}
+
+.modal {
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Тень модального окна */
+  z-index: 1002; /* Уровень над бэкдропом */
+  max-width: 80%; /* Максимальная ширина модального окна */
+  display: flex;
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
+}
+
+.modal-button {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background-color: #181818;
+  -webkit-background-size: 20px 20px;
+  background-size: 20px 20px;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 100;
+}
+
+.modal-form--container {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 430px;
+  padding: 100px 50px 80px;
+}
+
+.modal-form--descr {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+}
+
+.modal-form--title {
+  font-size: 28px;
+  line-height: 31px;
+  margin-bottom: 20px;
+}
+
+.modal-form {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+}
+
+.modal-form--input {
+  border: 1px #000 solid;
+  width: 100%;
+  letter-spacing: 0.3px;
+  padding: 16px 15px;
+  font-size: 11px;
+  text-transform: uppercase;
+  position: relative;
+}
+.modal-form--label {
+  font-size: 16px;
+  font-weight: 400;
+  align-self: start;
+}
+.modal-form--btn {
+  font-size: 10px;
+    padding: 20px 0;
+    width: 222px;
+    border: solid 1px #000;
+    letter-spacing: 1.5px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #000;
+    display: inline-block;
+    transition: all .3s;
+    cursor: pointer;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modal-form--btn:hover {
+  background-color: transparent;
+  color: #000;
+}
+.modal-error {
+  font-size: 15px;
+  letter-spacing: -.1px;
+  color: #e83c37;
+  font-weight: 400;
+  align-self: start;
+  position: absolute;
+  left: 0;
+  top: -25px;
+}

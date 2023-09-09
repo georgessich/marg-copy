@@ -85,12 +85,12 @@ export default function Authors() {
     // Проверка, выбрана ли буква
     activeLetter ? (
       activeLetter === letter && (
-        <div className="bg-zinc-400 p-4 mb-3 rounded-md" key={letter}>
+        <div className="bg-zinc-100 p-4 mb-3 rounded-md" key={letter}>
           <h2 className="text-2xl">{letter}</h2>
           <ul className="grid grid-cols-6 gap-4 pt-2">
             {authorGroups[letter]?.map((item) => (
               <li className="text-base" key={item}>
-                <Link href={`/authors/${slugify(item).toLowerCase()}`}>
+                <Link className="hover:text-gray-500" href={`/authors/${slugify(item).toLowerCase()}`}>
                   {item}
                 </Link>
               </li>
@@ -100,12 +100,12 @@ export default function Authors() {
       )
     ) : (
       // Если буква не выбрана, отображаем всех авторов для этой буквы
-      <div className="bg-zinc-400 p-4 mb-3 rounded-md" key={letter}>
+      <div className="bg-zinc-100 p-4 mb-3 rounded-md" key={letter}>
         <h2 className="text-2xl">{letter}</h2>
         <ul className="grid grid-cols-6 gap-4 pt-2">
           {authorGroups[letter]?.map((item) => (
             <li className="text-base" key={item}>
-              <Link href={`/authors/${slugify(item).toLowerCase()}`}>
+              <Link className="hover:text-gray-500" href={`/authors/${slugify(item).toLowerCase()}`}>
                 {item}
               </Link>
             </li>
